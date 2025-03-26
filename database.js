@@ -4,20 +4,25 @@ const { Sequelize } = require('sequelize');
 
 // PostgreSQL pool for direct queries
 const pool = new Pool({
-    user: 'postgres', 
-    host: 'localhost',
-    database: 'List_song',
-    password: 'emma020402',
-    port: 5432,
+    user: process.env.DB_USER || 'postgres', 
+    host: process.env.DB_HOST || 'localhost',
+    database: process.env.DB_NAME || 'List_song',
+    password: process.env.DB_PASSWORD || 'emma020402',
+    port: process.env.DB_PORT || 5432,
 });
 
 // Sequelize instance for ORM operations
-const sequelize = new Sequelize('List_song', 'postgres', 'emma020402', {
-    host: 'localhost',
-    dialect: 'postgres',
-    port: 5432,
-    logging: false
-});
+const sequelize = new Sequelize(
+    process.env.DB_NAME || 'List_song', 
+    process.env.DB_USER || 'postgres', 
+    process.env.DB_PASSWORD || 'emma020402', 
+    {
+        host: process.env.DB_HOST || 'localhost',
+        dialect: 'postgres',
+        port: process.env.DB_PORT || 5432,
+        logging: false
+    }
+);
 
 async function saveVideoDetails({ videoId, title, channelName, viewedAt, category, createdAt, updatedAt }) {
     const query = `
