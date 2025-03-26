@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Video Tracker</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #c00;
+            margin-top: 0;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+        .counter {
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            padding: 5px;
+        }
+        button {
+            background-color: #c00;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #a00;
+        }
+    </style>
+</head>
+<body>
+    <h2>YouTube Video Tracker</h2>
+    
+    <div class="status">
+        <p>Current status: <span id="status">Active</span></p>
+        <p>Videos tracked: <div class="counter" id="counter">0</div></p>
+    </div>
+    
+    <div>
+        <button id="viewHistory">View Tracked Videos</button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
