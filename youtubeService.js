@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // Use environment variable for API key
-const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || 'AIzaSyB7EVjKdyJmMBjRgFjCNJItOQxDi4HN4II';
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY; //|| 'AIzaSyB7EVjKdyJmMBjRgFjCNJItOQxDi4HN4II';
 
 async function getYouTubeVideoDetails(videoUrl) {
   try {
