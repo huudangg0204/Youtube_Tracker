@@ -1,15 +1,15 @@
-require('dotenv').config();
+require('dotenv').config(); //import dotenv to load environment variables from .env file
+const { Pool } = require('pg'); // Import PostgreSQL client
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const db = require('./database');
-const Song = require('./model/song');
-const { getYouTubeVideoDetails, checkVideoCategory } = require('./youtubeService');
+const db = require('./database'); // Import the database module
+const Song = require('./model/song'); // Import the Song model  
+const { getYouTubeVideoDetails, checkVideoCategory } = require('./youtubeService');// Import the YouTube service module
 
 const app = express();
-const port = process.env.PORT || 5000;
-
-// Set up middleware
+const port = process.env.PORT; // định nghĩa port từ biến môi trường .evn
+// cài đặt các middleware cho express
 app.use(bodyParser.json());
 app.use(cors({
   origin: '*',

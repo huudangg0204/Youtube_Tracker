@@ -4,7 +4,7 @@ const { Sequelize } = require('sequelize');
 
 // PostgreSQL pool for direct queries
 const pool = new Pool({
-    user: process.env.DB_USER , //  || postgre, là để kiểm tra xem biến môi trường có tồn tại hay không, nếu không thì sẽ sử dụng giá trị mặc định
+    user:process.env.DB_USER , //  || postgre, là để kiểm tra xem biến môi trường có tồn tại hay không, 
     // Nếu không có biến môi trường thì sẽ sử dụng giá trị mặc định là postgres
     host: process.env.DB_HOST ,
     database: process.env.DB_NAME ,
@@ -14,13 +14,13 @@ const pool = new Pool({
 
 // Sequelize instance for ORM operations
 const sequelize = new Sequelize(
-    process.env.DB_NAME || 'List_song', 
-    process.env.DB_USER || 'postgres', 
-    process.env.DB_PASSWORD || 'emma020402', 
+    process.env.DB_NAME  , 
+    process.env.DB_USER  , 
+    process.env.DB_PASSWORD , 
     {
-        host: process.env.DB_HOST || 'localhost',
+        host: process.env.DB_HOST ,
         dialect: 'postgres',
-        port: process.env.DB_PORT || 5432,
+        port: process.env.DB_PORT,
         logging: false
     }
 );
